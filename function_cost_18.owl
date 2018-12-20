@@ -1,0 +1,1815 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#"
+     xml:base="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:function_cost_18="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INTRODUCTION
+My name is Rafael, the ontology developer, and I will introduce to the reader this activity. This stage is part of a dissertation of the master’s course, where the work has the interest in answering the following research question: 
+How to compile a product development cost estimation in the early stages and collaborate on the interoperability, sharing and reuse of information?
+The overall goal is: to develop an artifact composed of a specialist system in an ontological approach. The artifact should be appropriate to generate costs in the early stages in PD in order to act with uncertainties of the conceptual design. And one of the specific goals is precisely to evaluate the performance of the artifact. The stakeholders are the engineers and cost specialists that have to estimate the cost as soon as possible when the customer get in contact. Actually a ontology specialist is the right user, but in future the artifact will be used by anyone.
+
+Following the guidelines of the DSR, research method followed in this work, the artifact evaluation can be oriented in different ways. Studies propose some methods noticed in this project and presented in the table below. A case study is presented, a cost estimation scenario for an overhead crane. In the early stages, the designer does not have enough customer data but has access to data from previous designs for simulations. The developed ontology simulates access to an internal database and, through the queries, seeks to define parameters in the same way as would happen in a real-life cost estimation. Each query tests the ontology and, for this reason, encourages the developer to increase the artifact&apos;s inference capability until it reaches the initial goal. The DSR seeks to guarantee the research replication, explaining the evaluation mechanisms and evidencing the results in relation to the metrics, whether the artifact worked or not.
+
+Evaluation type           Proposed methods
+Observational	           Case study: study the existing artifact in depth in the business environment
+Analytical	           Dynamic analysis: study the artifact during use to assess its dynamic qualities
+Experimental	          Simulation: Run the artifact with artificial data
+Test	          Functional testing: run artifact interfaces to discover possible faults and identify defects
+Descriptive	          Scenarios: Build detailed scenarios around the artifact to demonstrate its usefulness
+
+The use of the FOCA methodology helps the developer to define metrics that stimulate the quality increase following criteria established by different authors in a systemic way that depend less on the evaluator&apos;s experience. Meanwhile, DSR aids in the development of the research as a whole, FOCA seeks to assist in the development of the ontological artifact. By means of objectives to be achieved, the ontology receives grades that reflect the measurement of certain metrics, such as completeness, adaptability, consistency, among others. Ontology evaluation studies have criteria, but they become imprecise because they depend on the evaluator&apos;s experience.
+Competency questions are the demonstration of artifact use and its ability to solve a problem. The following are the queries, in the natural and artificial language, and the result achieved in the ontology as evidence of the ability to solve problems.
+
+For further information, whatch the video.
+https://www.youtube.com/watch?v=oC5Jpmu6WDw</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasFunctionCost -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasFunctionCost">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Function"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Cost"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between the class Cost and Functions</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPart">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#isPartOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Assembly"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rule to connect artifacts to another one. ex.: parts to assemblies / subassemblies to super assemblies.
+
+Font: Towards an ontology for open assembly model p.42</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#isPartOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Assembly"/>
+        <rdfs:comment>rule to connect artifacts to another one. ex.: parts to assemblies / subassemblies to super assemblies.
+
+Font: Towards an ontology for open assembly model p.42</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#moveIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#moveIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Artifact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Specification"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a relation of the artifacts moving in a specific axis, a direction</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#toMoveX -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#toMoveX">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#moveIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Assembly"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#x"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specific assembly moving just in one direction, in this case, X axis.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#toMoveY -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#toMoveY">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#moveIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Assembly"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#y"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specific assembly moving just in one direction, in this case, Y axis.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#toMoveZ -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#toMoveZ">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#moveIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Assembly"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#z"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specific assembly moving just in one direction, in this case, Z axis.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasBeamLoad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasBeamLoad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Load"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the capacity to lift a certain mass.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasCabinControl -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasCabinControl">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Control"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a way to control the overhed crane.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasCost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasCost">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Cost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has the cost type description, it is used to organize the cost.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a register date of some content.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDateUM -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDateUM">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasUM"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a unit measure.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDecibelRange -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDecibelRange">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Accessories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a range of sound measurement.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDepreciation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDepreciation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasCost"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#FixedCost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a fact that has a cost impact. The depreciation is characterized as a fixed cost.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDistanceUM -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDistanceUM">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasUM"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Distance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a unit measure.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDistanceX -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDistanceX">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#x"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It means the distance from one point to another one in the X axis, the shed width.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDistanceY -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDistanceY">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#y"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It means the distance from one point to another one in the Y axis, the shed length.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDistanceZ -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDistanceZ">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#z"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It means the distance from one point to another one in the Z axis, the shed height.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDrumDiameter -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDrumDiameter">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the diameter of the drum where the cable rests.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDrumLength -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDrumLength">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the length of the drum where the cable rests.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasEnergyConsume -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasEnergyConsume">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#IndirectCost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It means the consumption of energy related to the production.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasEvaluation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasEvaluation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Evaluation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is an evaluation made by the company based on satisfaction grade.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasEvaluationUM -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasEvaluationUM">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasUM"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Evaluation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a unit measure.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasExtraRawMaterial -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasExtraRawMaterial">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasCost"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#IndirectCost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a fact that has a cost impact. Using an extra raw material than planned characterizes an indirect cost.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasHandleTubeLoad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasHandleTubeLoad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Accessories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the capacity to lift a certain mass.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasHeightMeasurement -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasHeightMeasurement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Accessories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has the capacity to measure the height.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasHoistLoad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasHoistLoad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Load"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the capacity to lift a certain mass.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasHookResistance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasHookResistance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Hook"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has the resistance to lift up a load.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasLoadCellCapacity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasLoadCellCapacity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Accessories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is mass limit capacity of the load cell.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasLoadUM -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasLoadUM">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasUM"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Load"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a unit measure.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasMonetaryUM -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasMonetaryUM">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Cost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a unit measure.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasMotorPower -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasMotorPower">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Motor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the power capacity of the motor.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPulleyCompensationHoistDiameter -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPulleyCompensationHoistDiameter">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyCompensationHoist"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the diameter of the pulley compensation hoist.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPulleyHoistDiameter -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPulleyHoistDiameter">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyHoist"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the diameter of the pulley hoist.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPurchaseDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPurchaseDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDate"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PurchaseDate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has the purchase date register.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPurchasedMaterialCost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPurchasedMaterialCost">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasCost"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#VariableCost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a fact that has a cost impact. Using purchased material characterizes a variable cost.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasRawMaterialPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasRawMaterialPrice">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasCost"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#DirectCost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a fact that has a cost impact. Using raw material characterizes a direct cost.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasReducerLoad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasReducerLoad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Reducer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the capacity to lift a certain mass.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasRemoteControl -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasRemoteControl">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Control"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a way to control the overhed crane.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasRenting -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasRenting">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#FixedCost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the cost to rent the place.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasRopeDiameter -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasRopeDiameter">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the diameter of the rope, the steel cable.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasRopeLoad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasRopeLoad">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the capacity to lift a certain mass.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSensor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSensor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Accessories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a sensor to detect something without direct contact, eg. to avoid a collision.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSevereUse -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSevereUse">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Accessories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is an additional layer of material and/or engineering to strength the equipment.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpanLengh -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpanLengh">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Girder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a span length in X axis, the distance from one point of the shed to another one.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpecialProject -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpecialProject">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Accessories"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the modality of projecting a new product development, requires an invest.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeed">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Speed"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a speed value 1 or 2 in a certain axis.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedUM -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedUM">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasUM"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Speed"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a unit measure.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedX1 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedX1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Speed"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a speed value 1 or 2 in a certain axis.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedX2 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedX2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Speed"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a speed value 1 or 2 in a certain axis.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedY1 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedY1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Speed"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a speed value 1 or 2 in a certain axis.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedY2 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedY2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Speed"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a speed value 1 or 2 in a certain axis.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedZ1 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedZ1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Speed"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a speed value 1 or 2 in a certain axis.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedZ2 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedZ2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Speed"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a speed value 1 or 2 in a certain axis.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSupplyDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSupplyDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDate"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SupplyDate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has the supply date register.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasTrolleyLoad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasTrolleyLoad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Load"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the capacity to lift a certain mass.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasUM -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasUM">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Specification"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It has a unit measure.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasVirtualControl -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasVirtualControl">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Control"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a way to control the overhead crane.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Accessories -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Accessories">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+        <rdfs:comment>an object or device that is not essential in itself but adds to the beauty, convenience, or effectiveness of something else
+
+https://www.merriam-webster.com/dictionary/accessories</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Artifact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Artifact">
+        <rdfs:comment>It represents a distinct entity in a product, whether a component, part, subassembly or assembly. Pag.3
+
+X. Fiorentini, I. Gambino, V.-C. Liang, R. Sudarsan, M. Mani, and C. Bock, “An Ontology for Assembly Representation,” Nistir 7436, p. 76, 2007</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Assembly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Assembly">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Artifact"/>
+        <rdfs:comment>assemblies are composed of individual parts or others artifacts. Pag.18
+
+X. Fiorentini, I. Gambino, V.-C. Liang, R. Sudarsan, M. Mani, and C. Bock, “An Ontology for Assembly Representation,” Nistir 7436, p. 76, 2007</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Bridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Bridge">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Girder"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#moveIn"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#y"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Assembly"/>
+        <rdfs:comment>That part of an overhead crane consisting of girders, trucks, end ties, walkway and drive mechanism which carries the trolley and travels in a direction parallel to the runway. It moves in the &quot;y&quot; axis.
+
+Glossary of Overhead Cranes Terminology
+https://emhcranes.com/glossary-of-overhead-cranes-terminology/</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Control -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Control">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+        <rdfs:comment>A device for regulating in a predetermined way the power delivered to the motor or other equipment.
+
+https://emhcranes.com/glossary-of-overhead-cranes-terminology/</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Cost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Cost">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasMonetaryUM"/>
+                <owl:hasValue>$</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>Expenses related to the industrial area of the company that originate its products. All expenses incurred in the manufacturing division are classified as costs (raw material, labor, electricity, depreciation, etc.). Pag.7
+
+MEGLIORINI, Evandir. Custos: manual do professor. São Paulo: Makron, 2001. 193 p. ISBN 85-346-1269-2</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Date -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Date">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDateUM"/>
+                <owl:hasValue>day</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Specification"/>
+        <rdfs:comment>date registry of a product</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#DirectCost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#DirectCost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ProductCost"/>
+        <rdfs:comment>The appropriation of a cost to the product is given by what it actually consumed. In the case of the raw material, it is the quantity that was consumed. For direct labor, by the amount of hours that was actually used. Pag.9
+If another cost element has the measurement of the consumption in the product, the cost will also be considered as a direct cost, for example, the electric energy. If there are machines that measure energy consumption in the machines and if there is control, this cost will also be direct. Pag.11
+
+MEGLIORINI, Evandir. Custos: manual do professor. São Paulo: Makron, 2001. 193 p. ISBN 85-346-1269-2</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Distance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Distance">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDistanceUM"/>
+                <owl:hasValue>m</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Specification"/>
+        <rdfs:comment>Distance is a magnitude that measures the close relationship between two individual bodies in meters in the international system.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+        <rdfs:comment>a mechanical device or part to hold the rope
+
+https://www.merriam-webster.com/dictionary/drum</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Evaluation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Evaluation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasEvaluation"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasEvaluationUM"/>
+                <owl:hasValue>grade</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Specification"/>
+        <rdfs:comment>The performance evaluation is performed taking into account the expectations established by the company and the actual results achieved by the product.
+Grade: 1 &gt; 5</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#FixedCost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#FixedCost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ProductionCost"/>
+        <rdfs:comment>They are due to the installed production structure of the company, which are independent of the quantity that will be produced within the limit of installed capacity. Producing between 0 and 10000 kg of product, fixed costs will occur at the same intensity. Pag.12
+
+MEGLIORINI, Evandir. Custos: manual do professor. São Paulo: Makron, 2001. 193 p. ISBN 85-346-1269-2</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Function -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Function">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ToLift"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ToMove"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasFunctionCost"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Cost"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>Represents what the artifact is supposed to do. Pag.4
+
+X. Fiorentini, I. Gambino, V.-C. Liang, R. Sudarsan, M. Mani, and C. Bock, “An Ontology for Assembly Representation,” Nistir 7436, p. 76, 2007</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Girder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Girder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+        <rdfs:comment>The principal horizontal beams of the crane bridge which supports the trolley and is supported by the end trucks.
+
+Glossary of Overhead Cranes Terminology
+https://emhcranes.com/glossary-of-overhead-cranes-terminology/</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Hoist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Hoist">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPart"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyHoist"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#moveIn"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#z"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Assembly"/>
+        <rdfs:comment>A machinery unit that is used for lifting and lowering a load. It moves in the &quot;z&quot; axis.
+
+Glossary of Overhead Cranes Terminology
+https://emhcranes.com/glossary-of-overhead-cranes-terminology/</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Hook -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Hook">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+        <rdfs:comment>a curved or bent device for catching, holding, or pulling
+
+https://www.merriam-webster.com/dictionary/hook</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#IndirectCost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#IndirectCost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ProductCost"/>
+        <rdfs:comment>The appropriation of a cost to the product occurs by apportionment or some allocation criterion. Pag.10
+Basis of apportionment: appointed hours of labor, hours of machines used in the manufacture of products, kilos of raw material consumed. Pag. 11
+
+MEGLIORINI, Evandir. Custos: manual do professor. São Paulo: Makron, 2001. 193 p. ISBN 85-346-1269-2</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Load -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Load">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasBeamLoad"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasHoistLoad"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasTrolleyLoad"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasLoadUM"/>
+                <owl:hasValue>t</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Specification"/>
+        <rdfs:comment>a weight or source of pressure borne by someone or something</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Motor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Motor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+        <rdfs:comment>a rotating machine that transforms electrical energy into mechanical energy
+(motor + reducer = gearmotor)
+
+https://www.merriam-webster.com/dictionary/motor</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#isPartOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Assembly"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Artifact"/>
+        <rdfs:comment>part is a single component of an assembly. Pag.17
+
+X. Fiorentini, I. Gambino, V.-C. Liang, R. Sudarsan, M. Mani, and C. Bock, “An Ontology for Assembly Representation,” Nistir 7436, p. 76, 2007</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ProductCost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ProductCost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Cost"/>
+        <rdfs:comment>Product costs are connected to product metrics, identifying the unit quantity applied to the product. Pag.9
+
+MEGLIORINI, Evandir. Custos: manual do professor. São Paulo: Makron, 2001. 193 p. ISBN 85-346-1269-2</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ProductionCost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ProductionCost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Cost"/>
+        <rdfs:comment>This classification occurs linked to the relation of changing that happens in the production volume. Pag.11
+
+MEGLIORINI, Evandir. Custos: manual do professor. São Paulo: Makron, 2001. 193 p. ISBN 85-346-1269-2</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyCompensationHoist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyCompensationHoist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+        <rdfs:comment>pulley for distribution of effort
+
+NBR 8400</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyHoist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyHoist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+        <rdfs:comment>pulley for distribution of effort
+
+NBR 8400</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PurchaseDate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PurchaseDate">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPurchaseDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Date"/>
+        <rdfs:comment>date of purchase of the raw material or equipment</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Reducer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Reducer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+        <rdfs:comment>a reducer with various output speeds secured by attached combinations of gears (motor + reducer = gearmotor)
+
+https://www.merriam-webster.com/dictionary/gearmotor</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Part"/>
+        <rdfs:comment>The rope is formed by a set of smaller cables twisted around another cable.
+NBR 15466
+
+a large stout cord of strands of fibers or wire twisted or braided together
+https://www.merriam-webster.com/dictionary/rope</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Specification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Specification">
+        <rdfs:comment>is the collection of information relevant to an artificat deriving from customer needs and/or engineering requirements. Pag.4
+
+X. Fiorentini, I. Gambino, V.-C. Liang, R. Sudarsan, M. Mani, and C. Bock, “An Ontology for Assembly Representation,” Nistir 7436, p. 76, 2007</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Speed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Speed">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedX1"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedX2"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedY1"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedY2"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedZ1"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedZ2"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSpeedUM"/>
+                <owl:hasValue>m/min</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Specification"/>
+        <rdfs:comment>the speed is the relation between a certain distance traveled and the time spent in the course (m/min)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SupplyDate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SupplyDate">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasSupplyDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Date"/>
+        <rdfs:comment>date of equipment sale</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ToLift -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ToLift">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#toMoveZ"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#z"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Function"/>
+        <rdfs:comment>to move in the vertical axis</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ToMove -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ToMove">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#toMoveX"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#x"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#toMoveY"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#y"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Function"/>
+        <rdfs:comment>to move in plane x and y</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Trolley -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Trolley">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasPart"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Motor"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyCompensationHoist"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Reducer"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#moveIn"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#x"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Assembly"/>
+        <rdfs:comment>The unit carrying the hoisting mechanism which travels on the bridge rails. It moves in the &quot;x&quot; axis.
+
+Glossary of Overhead Cranes Terminology
+https://emhcranes.com/glossary-of-overhead-cranes-terminology/</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#VariableCost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#VariableCost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#ProductionCost"/>
+        <rdfs:comment>They are those that oscillate according to the level of production. For example, the cost of the raw material (the more it is produced, the greater its need, therefore the higher the cost) and the cost of electricity (the more it is produced, the greater the use of electrical machines and equipment, consequently, and cost). Pag.13
+
+MEGLIORINI, Evandir. Custos: manual do professor. São Paulo: Makron, 2001. 193 p. ISBN 85-346-1269-2</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#x -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#x">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDistanceX"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Distance"/>
+        <rdfs:comment>width of shed</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#y -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#y">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDistanceY"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Distance"/>
+        <rdfs:comment>length of shed</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#z -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#z">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#hasDistanceZ"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Distance"/>
+        <rdfs:comment>height of shed</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#AnticollisionDetector -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#AnticollisionDetector">
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <hasSensor rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</hasSensor>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a sensor to detect collision.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Beam01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Beam01">
+        <hasRawMaterialPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasRawMaterialPrice>
+        <hasSpanLengh rdf:datatype="http://www.w3.org/2001/XMLSchema#double">15.0</hasSpanLengh>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is what support all forces applied in an overhead crane.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Beam02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Beam02">
+        <hasRawMaterialPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasRawMaterialPrice>
+        <hasSpanLengh rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.0</hasSpanLengh>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is what support all forces applied in an overhead crane.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#BeamStructure01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#BeamStructure01">
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Beam01"/>
+        <hasBeamLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">15.0</hasBeamLoad>
+        <hasDistanceY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</hasDistanceY>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assembly compounds by parts.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#BeamStructure02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#BeamStructure02">
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#AnticollisionDetector"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Beam02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SevereUse"/>
+        <hasBeamLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</hasBeamLoad>
+        <hasDistanceY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</hasDistanceY>
+        <hasSpeedY1 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.0</hasSpeedY1>
+        <hasSpeedY2 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">30.0</hasSpeedY2>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assembly compounds by parts.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#BeamStructure03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#BeamStructure03">
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#AnticollisionDetector"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Beam02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SevereUse"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpecialPainting"/>
+        <hasBeamLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</hasBeamLoad>
+        <hasDistanceY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">120.0</hasDistanceY>
+        <hasSpeedY1 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.0</hasSpeedY1>
+        <hasSpeedY2 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">30.0</hasSpeedY2>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assembly compounds by parts.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#BeamStructure04 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#BeamStructure04">
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#AnticollisionDetector"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Beam02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#CabinControl01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SevereUse"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SoundSensor"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpecialPainting"/>
+        <hasBeamLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</hasBeamLoad>
+        <hasDistanceY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">130.0</hasDistanceY>
+        <hasSpeedY1 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.0</hasSpeedY1>
+        <hasSpeedY2 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">30.0</hasSpeedY2>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assembly compounds by parts.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#CabinControl01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#CabinControl01">
+        <hasCabinControl rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasCabinControl>
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An cabin where the user stay inside and control the equipment.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Depreciation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Depreciation">
+        <hasDepreciation rdf:datatype="http://www.w3.org/2001/XMLSchema#double">150.0</hasDepreciation>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the devaluation of quality or monetary value.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum01">
+        <hasDrumDiameter rdf:datatype="http://www.w3.org/2001/XMLSchema#double">440.0</hasDrumDiameter>
+        <hasDrumLength rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1800.0</hasDrumLength>
+        <hasRawMaterialPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasRawMaterialPrice>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is where the steel cable rests.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum02">
+        <hasDrumDiameter rdf:datatype="http://www.w3.org/2001/XMLSchema#double">515.0</hasDrumDiameter>
+        <hasDrumLength rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2904.4</hasDrumLength>
+        <hasRawMaterialPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasRawMaterialPrice>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is where the steel cable rests.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum03">
+        <hasDrumDiameter rdf:datatype="http://www.w3.org/2001/XMLSchema#double">800.0</hasDrumDiameter>
+        <hasDrumLength rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3100.0</hasDrumLength>
+        <hasRawMaterialPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasRawMaterialPrice>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is where the steel cable rests.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Energy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Energy">
+        <hasEnergyConsume rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.2</hasEnergyConsume>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Energy used in the production.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HandleTube -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HandleTube">
+        <hasHandleTubeLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</hasHandleTubeLoad>
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is an accessory to handle the transportation of tubes with the overhead crane.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HeightMeasure -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HeightMeasure">
+        <hasHeightMeasurement rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasHeightMeasurement>
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is an accessory to measure the height.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HoistStructure01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HoistStructure01">
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Hook01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyHoist01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#RemoteControl01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope01"/>
+        <hasDistanceZ rdf:datatype="http://www.w3.org/2001/XMLSchema#double">18.0</hasDistanceZ>
+        <hasEvaluation rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</hasEvaluation>
+        <hasHoistLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">15.0</hasHoistLoad>
+        <hasSpeedZ1 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</hasSpeedZ1>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assembly compounds by parts.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HoistStructure02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HoistStructure02">
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#AnticollisionDetector"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HandleTube"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Hook01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyHoist02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#RemoteControl01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SevereUse"/>
+        <hasDistanceZ rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.0</hasDistanceZ>
+        <hasEvaluation rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">4</hasEvaluation>
+        <hasHoistLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</hasHoistLoad>
+        <hasSpeedZ1 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.0</hasSpeedZ1>
+        <hasSpeedZ2 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.0</hasSpeedZ2>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assembly compounds by parts.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HoistStructure03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HoistStructure03">
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#AnticollisionDetector"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HandleTube"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Hook01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyHoist02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#RemoteVirtualControl01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SevereUse"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpecialPainting"/>
+        <hasDistanceZ rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</hasDistanceZ>
+        <hasEvaluation rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</hasEvaluation>
+        <hasHoistLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</hasHoistLoad>
+        <hasSpeedZ1 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.0</hasSpeedZ1>
+        <hasSpeedZ2 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.0</hasSpeedZ2>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assembly compounds by parts.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HoistStructure04 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HoistStructure04">
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#AnticollisionDetector"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HandleTube"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#HeightMeasure"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Hook01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#LoadCell"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyHoist02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#RemoteVirtualControl01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SevereUse"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpecialPainting"/>
+        <hasDistanceZ rdf:datatype="http://www.w3.org/2001/XMLSchema#double">120.0</hasDistanceZ>
+        <hasHoistLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</hasHoistLoad>
+        <hasSpeedZ1 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.0</hasSpeedZ1>
+        <hasSpeedZ2 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.0</hasSpeedZ2>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assembly compounds by parts.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Hook01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Hook01">
+        <hasHookResistance rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</hasHookResistance>
+        <hasRawMaterialPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasRawMaterialPrice>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a piece of metal or other material, curved or bent back at an angle, for catching hold of or hanging things on.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#LoadCell -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#LoadCell">
+        <hasLoadCellCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</hasLoadCellCapacity>
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a transducer used to create an electrical signal whose magnitude is directly proportional to the force being measured.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Motor01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Motor01">
+        <hasMotorPower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">60.0</hasMotorPower>
+        <hasPurchaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-10-01T00:00:00Z</hasPurchaseDate>
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <hasSpecialProject rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasSpecialProject>
+        <hasSupplyDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-10T00:00:00Z</hasSupplyDate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a machine designed to convert one form of energy into mechanical energy.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Motor02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Motor02">
+        <hasMotorPower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">75.0</hasMotorPower>
+        <hasPurchaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-11-01T00:00:00Z</hasPurchaseDate>
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <hasSupplyDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-10-01T00:00:00Z</hasSupplyDate>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a machine designed to convert one form of energy into mechanical energy.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyCompensationHoist01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyCompensationHoist01">
+        <hasPulleyCompensationHoistDiameter rdf:datatype="http://www.w3.org/2001/XMLSchema#double">302.0</hasPulleyCompensationHoistDiameter>
+        <hasRawMaterialPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasRawMaterialPrice>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a pulley to compensate the forces of the hoist.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyCompensationHoist02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyCompensationHoist02">
+        <hasPulleyCompensationHoistDiameter rdf:datatype="http://www.w3.org/2001/XMLSchema#double">400.0</hasPulleyCompensationHoistDiameter>
+        <hasRawMaterialPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasRawMaterialPrice>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a pulley to compensate the forces of the hoist.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyHoist01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyHoist01">
+        <hasPulleyHoistDiameter rdf:datatype="http://www.w3.org/2001/XMLSchema#double">492.8</hasPulleyHoistDiameter>
+        <hasRawMaterialPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasRawMaterialPrice>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a pulley of the hoist.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyHoist02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyHoist02">
+        <hasPulleyHoistDiameter rdf:datatype="http://www.w3.org/2001/XMLSchema#double">400.1</hasPulleyHoistDiameter>
+        <hasRawMaterialPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasRawMaterialPrice>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a pulley of the hoist.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Reducer01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Reducer01">
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <hasReducerLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">40.0</hasReducerLoad>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A reducer or a gear motor is designed to produce high torque while maintaining a low horsepower, or low speed, motor output.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Reducer02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Reducer02">
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <hasReducerLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">40.0</hasReducerLoad>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A reducer or a gear motor is designed to produce high torque while maintaining a low horsepower, or low speed, motor output.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#RemoteControl01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#RemoteControl01">
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <hasRemoteControl rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasRemoteControl>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a device to control a machine linked by a cable.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#RemoteVirtualControl01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#RemoteVirtualControl01">
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <hasVirtualControl rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasVirtualControl>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a device to control a machine from a distance.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#RentingBuilding -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#RentingBuilding">
+        <hasRenting rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1500.0</hasRenting>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the cost to rent a building.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope01">
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <hasRopeDiameter rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.6</hasRopeDiameter>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the steel cable used to lift something.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Rope02">
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <hasRopeDiameter rdf:datatype="http://www.w3.org/2001/XMLSchema#double">25.4</hasRopeDiameter>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the steel cable used to lift something.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SevereUse -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SevereUse">
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <hasSevereUse rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</hasSevereUse>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is an additional layer of material and/or engineering to strength the equipment.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SoundSensor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SoundSensor">
+        <hasDecibelRange rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</hasDecibelRange>
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a sensor to measure the sound capacity.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpecialPainting -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpecialPainting">
+        <hasExtraRawMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasExtraRawMaterial>
+        <hasSpecialProject rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasSpecialProject>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is a painting with special characteristics to resist more in certain conditions.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpeedX -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpeedX">
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It means the speed to move from one point to another one in the X axis, the shed width.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpeedY -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpeedY">
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It means the speed to move from one point to another one in the Y axis, the shed length.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpeedZ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpeedZ">
+        <hasPurchasedMaterialCost rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</hasPurchasedMaterialCost>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It means the speed to move from one point to another one in the Z axis, the shed height.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#TrolleyStructure01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#TrolleyStructure01">
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Motor01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyCompensationHoist01"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Reducer01"/>
+        <hasDistanceX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</hasDistanceX>
+        <hasTrolleyLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">15.0</hasTrolleyLoad>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assembly compounds by parts.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#TrolleyStructure02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#TrolleyStructure02">
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#AnticollisionDetector"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Motor02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyCompensationHoist02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Reducer02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SevereUse"/>
+        <hasDistanceX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.0</hasDistanceX>
+        <hasSpeedX1 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.0</hasSpeedX1>
+        <hasSpeedX2 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">30.0</hasSpeedX2>
+        <hasTrolleyLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</hasTrolleyLoad>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assembly compounds by parts.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#TrolleyStructure03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#TrolleyStructure03">
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#AnticollisionDetector"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Drum03"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Motor02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#PulleyCompensationHoist02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#Reducer02"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SevereUse"/>
+        <hasPart rdf:resource="http://www.semanticweb.org/rafavolto/ontologies/function_cost_18#SpecialPainting"/>
+        <hasDistanceX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.0</hasDistanceX>
+        <hasSpeedX1 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.0</hasSpeedX1>
+        <hasSpeedX2 rdf:datatype="http://www.w3.org/2001/XMLSchema#double">30.0</hasSpeedX2>
+        <hasTrolleyLoad rdf:datatype="http://www.w3.org/2001/XMLSchema#double">60.0</hasTrolleyLoad>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assembly compounds by parts.</rdfs:comment>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
